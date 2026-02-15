@@ -1,6 +1,6 @@
-# 🚀 Roboshop Microservices Deployment (Practice Notes)
+#  Roboshop Microservices Deployment (Practice Notes)
 
-## 📘 Project Description
+##  Project Description
 
 This project represents my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
 
@@ -8,7 +8,7 @@ I followed the official Roboshop documentation and deployed each service indepen
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 - Created multiple EC2 instances (t3.micro)
 - Installed and configured each service individually
@@ -19,7 +19,7 @@ I followed the official Roboshop documentation and deployed each service indepen
 
 ---
 
-## 🗄 Database & Messaging Layer
+##  Database & Messaging Layer
 
 ### MongoDB
 
@@ -52,7 +52,7 @@ I followed the official Roboshop documentation and deployed each service indepen
 
 ---
 
-## ⚙ Application Services
+##  Application Services
 
 ### Catalogue Service (NodeJS)
 
@@ -100,7 +100,7 @@ I followed the official Roboshop documentation and deployed each service indepen
 
 ---
 
-## 🌐 Frontend
+##  Frontend
 
 - Installed Nginx
 - Configured reverse proxy
@@ -110,7 +110,7 @@ I followed the official Roboshop documentation and deployed each service indepen
 
 ---
 
-## 🎯 Outcome
+##  Outcome
 
 This project helped me understand real-time DevOps concepts like service management, networking, dependency handling, and application troubleshooting.
 
