@@ -1,6 +1,7 @@
 🚀 Roboshop Microservices Deployment (Practice Notes)
 
 This project represents my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
+
 I followed the official documentation and deployed each service independently to understand real-world microservices architecture.
 
 📌 Project Overview
@@ -28,7 +29,7 @@ Enabled and started MongoDB service
 
 Loaded catalogue schema
 
-Verified database status
+Verified MongoDB status
 
 🔹 MySQL
 
@@ -38,17 +39,17 @@ Secured installation
 
 Created database and user
 
-Loaded schema
+Loaded required schema
 
-Enabled and started service
+Enabled and started MySQL service
 
 🔹 Redis
 
 Installed Redis
 
-Enabled and started Redis
+Enabled and started Redis service
 
-Verified service is active
+Verified Redis is active
 
 🔹 RabbitMQ
 
@@ -60,7 +61,7 @@ Created roboshop user
 
 Assigned permissions
 
-Enabled and started service
+Enabled and started RabbitMQ service
 
 ⚙ Application Layer Services
 🔹 Catalogue Service (NodeJS)
@@ -69,23 +70,25 @@ Installed NodeJS
 
 Downloaded application code
 
-Installed dependencies (npm install)
+Installed dependencies using npm
 
 Configured systemd service
 
-Started service (Port 8080 verified)
+Enabled and started service
+
+Verified service on port 8080
 
 🔹 User Service (NodeJS)
 
 Installed NodeJS
 
-Downloaded code
+Downloaded application code
 
 Installed dependencies
 
-Configured systemd
+Configured systemd service
 
-Connected to MongoDB
+Connected service to MongoDB
 
 Enabled and started service
 
@@ -93,19 +96,19 @@ Enabled and started service
 
 Installed NodeJS
 
-Downloaded code
+Downloaded application code
 
 Installed dependencies
 
-Configured systemd
+Configured systemd service
 
-Connected to Redis
+Connected service to Redis
 
 Enabled and started service
 
 🔹 Shipping Service (Java + Maven)
 
-Installed Java & Maven
+Installed Java and Maven
 
 Built application using Maven
 
@@ -113,9 +116,9 @@ Generated JAR file
 
 Configured systemd service
 
-Connected to MySQL
+Connected service to MySQL
 
-Enabled and started service
+Enabled and started shipping service
 
 🔹 Payment Service (Python)
 
@@ -125,9 +128,9 @@ Installed required dependencies
 
 Configured systemd service
 
-Connected to RabbitMQ
+Connected service to RabbitMQ
 
-Enabled and started service
+Enabled and started payment service
 
 🌐 Frontend Layer
 🔹 Nginx
@@ -141,17 +144,3 @@ Updated backend routing configuration
 Enabled and started Nginx
 
 Verified application in browser
-
-🎯 Key Learnings
-
-Linux service management using systemctl
-
-Microservices communication via private networking
-
-Dependency handling (DB, Cache, Message Queue)
-
-Reverse proxy configuration using Nginx
-
-Troubleshooting using logs & status checks
-
-Real-world DevOps deployment workflow understanding
