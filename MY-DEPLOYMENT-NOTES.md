@@ -1,15 +1,13 @@
-MY ROBOSHOP MICROSERVICES DEPLOYMENT (Notes)
+🚀 Roboshop Microservices Deployment (Practice Notes)
 
-This project is my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
-I followed the official Roboshop documentation and deployed each service separately to understand how real-world microservices architecture works.
+This project represents my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
+I followed the official documentation and deployed each service independently to understand real-world microservices architecture.
 
-What I Did
+📌 Project Overview
 
 Created multiple EC2 instances (t3.micro)
 
-Installed and configured each service one by one
-
-Ensured each service runs independently
+Installed and configured services individually
 
 Connected services using private IP addresses
 
@@ -17,7 +15,10 @@ Configured systemd services for auto start
 
 Verified service health and port accessibility
 
-MongoDB
+Tested complete application flow
+
+🗄 Database & Messaging Layer
+🔹 MongoDB
 
 Launched EC2 instance
 
@@ -25,31 +26,31 @@ Installed MongoDB
 
 Enabled and started MongoDB service
 
-Loaded catalogue schema into database
+Loaded catalogue schema
 
-Verified MongoDB is running
+Verified database status
 
-MySQL
+🔹 MySQL
 
 Installed MySQL server
 
 Secured installation
 
-Created required database and user
+Created database and user
 
 Loaded schema
 
-Enabled and started MySQL service
+Enabled and started service
 
-Redis
+🔹 Redis
 
 Installed Redis
 
-Enabled and started Redis service
+Enabled and started Redis
 
-Verified Redis is active
+Verified service is active
 
-RabbitMQ
+🔹 RabbitMQ
 
 Installed Erlang
 
@@ -57,102 +58,100 @@ Installed RabbitMQ
 
 Created roboshop user
 
-Set required permissions
+Assigned permissions
 
-Enabled and started RabbitMQ service
+Enabled and started service
 
-Catalogue Service (NodeJS)
+⚙ Application Layer Services
+🔹 Catalogue Service (NodeJS)
 
 Installed NodeJS
 
 Downloaded application code
 
-Installed dependencies using npm
+Installed dependencies (npm install)
 
 Configured systemd service
 
-Enabled and started catalogue service
+Started service (Port 8080 verified)
 
-Verified service running on port 8080
-
-User Service (NodeJS)
+🔹 User Service (NodeJS)
 
 Installed NodeJS
 
-Downloaded application code
+Downloaded code
 
 Installed dependencies
 
-Configured systemd service
+Configured systemd
 
-Connected service to MongoDB
+Connected to MongoDB
 
-Enabled and started user service
+Enabled and started service
 
-Cart Service (NodeJS)
+🔹 Cart Service (NodeJS)
 
 Installed NodeJS
 
-Downloaded application code
+Downloaded code
 
 Installed dependencies
 
-Configured systemd service
+Configured systemd
 
-Connected service to Redis
+Connected to Redis
 
-Enabled and started cart service
+Enabled and started service
 
-Shipping Service (Java + Maven)
+🔹 Shipping Service (Java + Maven)
 
-Installed Java and Maven
+Installed Java & Maven
 
 Built application using Maven
 
-Copied generated JAR file
+Generated JAR file
 
 Configured systemd service
 
-Connected service to MySQL
+Connected to MySQL
 
-Enabled and started shipping service
+Enabled and started service
 
-Payment Service (Python)
+🔹 Payment Service (Python)
 
-Installed Python and required packages
+Installed Python
 
-Downloaded application code
-
-Installed dependencies using pip
+Installed required dependencies
 
 Configured systemd service
 
-Connected service to RabbitMQ
+Connected to RabbitMQ
 
-Enabled and started payment service
+Enabled and started service
 
-Frontend (Nginx)
+🌐 Frontend Layer
+🔹 Nginx
 
 Installed Nginx
 
 Configured reverse proxy
 
-Updated configuration to connect backend services
+Updated backend routing configuration
 
 Enabled and started Nginx
 
-Verified application through browser
+Verified application in browser
 
-What I Learned
+🎯 Key Learnings
 
-Service management using systemctl
+Linux service management using systemctl
 
-Inter-service communication using private IP
+Microservices communication via private networking
 
-Dependency handling (DB, Cache, MQ)
+Dependency handling (DB, Cache, Message Queue)
 
-Application troubleshooting
+Reverse proxy configuration using Nginx
 
-Log monitoring and debugging
+Troubleshooting using logs & status checks
 
-Real-time microservices architecture understanding
+Real-world DevOps deployment workflow understanding
