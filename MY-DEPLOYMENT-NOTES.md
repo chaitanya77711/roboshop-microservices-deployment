@@ -1,178 +1,117 @@
-🚀 Roboshop Microservices Deployment (Practice Notes)
-📖 Project Description
+# 🚀 Roboshop Microservices Deployment (Practice Notes)
+
+## 📘 Project Description
 
 This project represents my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
 
 I followed the official Roboshop documentation and deployed each service independently to understand how real-world microservices architecture works in production-like environments.
 
-📌 Project Overview
+---
 
-Created multiple EC2 instances (t3.micro)
+## 📌 Project Overview
 
-Installed and configured each service individually
+- Created multiple EC2 instances (t3.micro)
+- Installed and configured each service individually
+- Connected services using private IP addresses
+- Configured systemd services for auto-start
+- Verified service health and port accessibility
+- Tested complete end-to-end application flow
 
-Connected services using private IP addresses
+---
 
-Configured systemd services for auto start
+## 🗄 Database & Messaging Layer
 
-Verified service health and port accessibility
+### MongoDB
 
-Tested complete end-to-end application flow
+- Launched dedicated EC2 instance
+- Installed MongoDB server
+- Enabled and started MongoDB service
+- Loaded catalogue schema
+- Verified database status
 
-🗄 Database & Messaging Layer
-🔹 MongoDB
+### MySQL
 
-Launched dedicated EC2 instance
+- Installed MySQL server
+- Secured installation
+- Created required database and user
+- Loaded shipping schema
+- Enabled and started MySQL service
 
-Installed MongoDB server
+### Redis
 
-Enabled and started MongoDB service
+- Installed Redis
+- Enabled and started Redis service
+- Verified Redis is active
 
-Loaded catalogue schema into database
+### RabbitMQ
 
-Verified MongoDB service status
+- Installed Erlang and RabbitMQ
+- Created roboshop user
+- Set required permissions
+- Enabled and started RabbitMQ service
 
-🔹 MySQL
+---
 
-Installed MySQL server
+## ⚙ Application Services
 
-Secured MySQL installation
+### Catalogue Service (NodeJS)
 
-Created required database and application user
+- Installed NodeJS
+- Downloaded application code
+- Installed dependencies using npm
+- Configured systemd service
+- Enabled and started service
+- Verified service on port 8080
 
-Loaded shipping schema
+### User Service (NodeJS)
 
-Enabled and started MySQL service
+- Installed NodeJS
+- Downloaded application code
+- Installed dependencies
+- Configured systemd service
+- Connected service to MongoDB
+- Enabled and started service
 
-Verified database connectivity
+### Cart Service (NodeJS)
 
-🔹 Redis
+- Installed NodeJS
+- Downloaded application code
+- Installed dependencies
+- Configured systemd service
+- Connected service to Redis
+- Enabled and started service
 
-Installed Redis
+### Shipping Service (Java + Maven)
 
-Enabled and started Redis service
+- Installed Java and Maven
+- Built application using Maven
+- Copied JAR file
+- Configured systemd service
+- Connected service to MySQL
+- Enabled and started service
 
-Verified Redis is active and reachable
+### Payment Service (Python)
 
-🔹 RabbitMQ
+- Installed Python dependencies
+- Downloaded application code
+- Configured systemd service
+- Connected service to RabbitMQ
+- Enabled and started service
 
-Installed Erlang (dependency)
+---
 
-Installed RabbitMQ server
+## 🌐 Frontend
 
-Created roboshop user
+- Installed Nginx
+- Configured reverse proxy
+- Updated configuration to connect backend services
+- Enabled and started Nginx
+- Verified application access through browser
 
-Set required permissions
+---
 
-Enabled and started RabbitMQ service
+## 🎯 Outcome
 
-Verified message broker status
+This project helped me understand real-time DevOps concepts like service management, networking, dependency handling, and application troubleshooting.
 
-🧩 Application Services Layer
-🔹 Catalogue Service (NodeJS)
-
-Installed NodeJS
-
-Downloaded application code
-
-Installed dependencies using npm
-
-Configured systemd service
-
-Enabled and started catalogue service
-
-Verified service on port 8080
-
-🔹 User Service (NodeJS)
-
-Installed NodeJS
-
-Downloaded application code
-
-Installed dependencies
-
-Configured systemd service
-
-Connected service to MongoDB
-
-Enabled and started user service
-
-Verified service status
-
-🔹 Cart Service (NodeJS)
-
-Installed NodeJS
-
-Downloaded application code
-
-Installed dependencies
-
-Configured systemd service
-
-Connected service to Redis
-
-Enabled and started cart service
-
-Verified service status
-
-🔹 Shipping Service (Java + Maven)
-
-Installed Java
-
-Installed Maven
-
-Downloaded shipping service code
-
-Built application using Maven
-
-Copied generated JAR file
-
-Configured systemd service
-
-Connected service to MySQL
-
-Enabled and started shipping service
-
-Verified service status
-
-🔹 Payment Service (Python)
-
-Installed Python and pip
-
-Downloaded application code
-
-Installed required Python dependencies
-
-Configured systemd service
-
-Connected service to RabbitMQ
-
-Enabled and started payment service
-
-Verified service status
-
-🌐 Frontend Service (Nginx)
-
-Installed Nginx
-
-Downloaded frontend code
-
-Configured reverse proxy for backend services
-
-Enabled and started Nginx
-
-Verified application access via browser
-
-✅ Outcome
-
-Successfully deployed complete Roboshop application manually
-
-Understood service communication via private networking
-
-Gained practical knowledge of systemd service management
-
-Learned database schema loading and dependency handling
-
-Practiced troubleshooting service failures and connectivity issues
-
-Understood real-time DevOps concepts including service management, networking, dependency handling, and application troubleshooting
+It improved my confidence in manually deploying and managing distributed microservices architecture.
