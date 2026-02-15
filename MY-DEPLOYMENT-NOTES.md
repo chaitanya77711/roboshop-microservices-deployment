@@ -1,14 +1,15 @@
 🚀 Roboshop Microservices Deployment (Practice Notes)
+📖 Project Description
 
 This project represents my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
 
-I followed the official documentation and deployed each service independently to understand real-world microservices architecture.
+I followed the official Roboshop documentation and deployed each service independently to understand how real-world microservices architecture works in production-like environments.
 
 📌 Project Overview
 
 Created multiple EC2 instances (t3.micro)
 
-Installed and configured services individually
+Installed and configured each service individually
 
 Connected services using private IP addresses
 
@@ -16,32 +17,34 @@ Configured systemd services for auto start
 
 Verified service health and port accessibility
 
-Tested complete application flow
+Tested complete end-to-end application flow
 
 🗄 Database & Messaging Layer
 🔹 MongoDB
 
-Launched EC2 instance
+Launched dedicated EC2 instance
 
-Installed MongoDB
+Installed MongoDB server
 
 Enabled and started MongoDB service
 
-Loaded catalogue schema
+Loaded catalogue schema into database
 
-Verified MongoDB status
+Verified MongoDB service status
 
 🔹 MySQL
 
 Installed MySQL server
 
-Secured installation
+Secured MySQL installation
 
-Created database and user
+Created required database and application user
 
-Loaded required schema
+Loaded shipping schema
 
 Enabled and started MySQL service
+
+Verified database connectivity
 
 🔹 Redis
 
@@ -49,21 +52,23 @@ Installed Redis
 
 Enabled and started Redis service
 
-Verified Redis is active
+Verified Redis is active and reachable
 
 🔹 RabbitMQ
 
-Installed Erlang
+Installed Erlang (dependency)
 
-Installed RabbitMQ
+Installed RabbitMQ server
 
 Created roboshop user
 
-Assigned permissions
+Set required permissions
 
 Enabled and started RabbitMQ service
 
-⚙ Application Layer Services
+Verified message broker status
+
+🧩 Application Services Layer
 🔹 Catalogue Service (NodeJS)
 
 Installed NodeJS
@@ -74,7 +79,7 @@ Installed dependencies using npm
 
 Configured systemd service
 
-Enabled and started service
+Enabled and started catalogue service
 
 Verified service on port 8080
 
@@ -90,7 +95,9 @@ Configured systemd service
 
 Connected service to MongoDB
 
-Enabled and started service
+Enabled and started user service
+
+Verified service status
 
 🔹 Cart Service (NodeJS)
 
@@ -104,15 +111,21 @@ Configured systemd service
 
 Connected service to Redis
 
-Enabled and started service
+Enabled and started cart service
+
+Verified service status
 
 🔹 Shipping Service (Java + Maven)
 
-Installed Java and Maven
+Installed Java
+
+Installed Maven
+
+Downloaded shipping service code
 
 Built application using Maven
 
-Generated JAR file
+Copied generated JAR file
 
 Configured systemd service
 
@@ -120,11 +133,15 @@ Connected service to MySQL
 
 Enabled and started shipping service
 
+Verified service status
+
 🔹 Payment Service (Python)
 
-Installed Python
+Installed Python and pip
 
-Installed required dependencies
+Downloaded application code
+
+Installed required Python dependencies
 
 Configured systemd service
 
@@ -132,15 +149,30 @@ Connected service to RabbitMQ
 
 Enabled and started payment service
 
-🌐 Frontend Layer
-🔹 Nginx
+Verified service status
+
+🌐 Frontend Service (Nginx)
 
 Installed Nginx
 
-Configured reverse proxy
+Downloaded frontend code
 
-Updated backend routing configuration
+Configured reverse proxy for backend services
 
 Enabled and started Nginx
 
-Verified application in browser
+Verified application access via browser
+
+✅ Outcome
+
+Successfully deployed complete Roboshop application manually
+
+Understood service communication via private networking
+
+Gained practical knowledge of systemd service management
+
+Learned database schema loading and dependency handling
+
+Practiced troubleshooting service failures and connectivity issues
+
+Understood real-time DevOps concepts including service management, networking, dependency handling, and application troubleshooting
