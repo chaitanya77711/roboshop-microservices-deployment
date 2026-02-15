@@ -1,88 +1,158 @@
-MY ROBOSHOP MICROSERVICES DEPLOYEMENT(Notes)
+MY ROBOSHOP MICROSERVICES DEPLOYMENT (Notes)
 
 This project is my hands-on practice of deploying the Roboshop microservices application manually on AWS EC2 instances.
 I followed the official Roboshop documentation and deployed each service separately to understand how real-world microservices architecture works.
 
-WHAT I DID
-I created multiple EC2 instances (t3.micro) and installed each service one by one.
-Each service runs independently and communicates using private IP addresses.
+What I Did
 
-MONGODB
+Created multiple EC2 instances (t3.micro)
+
+Installed and configured each service one by one
+
+Ensured each service runs independently
+
+Connected services using private IP addresses
+
+Configured systemd services for auto start
+
+Verified service health and port accessibility
+
+MongoDB
+
 Launched EC2 instance
+
 Installed MongoDB
+
 Enabled and started MongoDB service
+
 Loaded catalogue schema into database
+
 Verified MongoDB is running
 
-MYSQL
+MySQL
+
 Installed MySQL server
+
 Secured installation
-Created database and user
-Loaded required schema
+
+Created required database and user
+
+Loaded schema
+
 Enabled and started MySQL service
 
-REDIS
+Redis
+
 Installed Redis
+
 Enabled and started Redis service
+
 Verified Redis is active
 
-RABBITMQ
-Installed Erlang and RabbitMQ
+RabbitMQ
+
+Installed Erlang
+
+Installed RabbitMQ
+
 Created roboshop user
-Set permissions
+
+Set required permissions
+
 Enabled and started RabbitMQ service
 
-CATALOGUE SERVICE(NODE JS)
+Catalogue Service (NodeJS)
+
 Installed NodeJS
+
 Downloaded application code
+
 Installed dependencies using npm
+
 Configured systemd service
+
 Enabled and started catalogue service
-Verified service on port 8080
 
-USER SERVICE (NODE JS)
+Verified service running on port 8080
+
+User Service (NodeJS)
+
 Installed NodeJS
+
 Downloaded application code
+
 Installed dependencies
+
 Configured systemd service
+
 Connected service to MongoDB
-Enabled and started service
 
-CART SERVICE(NODE JS)
+Enabled and started user service
+
+Cart Service (NodeJS)
+
 Installed NodeJS
-Downloaded application code
-Installed dependencies
-Configured systemd 
-Connected service to Redis
-Enabled and started service
 
-SHPPING SERVICE (JAVA + MEAVEN)
-Installed Java and Maven
-Built application using Maven
-Copied JAR file
+Downloaded application code
+
+Installed dependencies
+
 Configured systemd service
+
+Connected service to Redis
+
+Enabled and started cart service
+
+Shipping Service (Java + Maven)
+
+Installed Java and Maven
+
+Built application using Maven
+
+Copied generated JAR file
+
+Configured systemd service
+
 Connected service to MySQL
+
 Enabled and started shipping service
 
-PAYMENT SERVICE(PYTHON)
-Installed Python and pip
-Installed required packages
+Payment Service (Python)
+
+Installed Python and required packages
+
+Downloaded application code
+
+Installed dependencies using pip
+
 Configured systemd service
+
 Connected service to RabbitMQ
+
 Enabled and started payment service
 
-FRONTEND(NGINX)
+Frontend (Nginx)
+
 Installed Nginx
-Copied frontend static files
+
 Configured reverse proxy
-Restarted Nginx
-Verified application from browser using Public IP
 
-WHAT I LEARNED
-How microservices communicate using internal networking
-How to configure systemd services
-How to debug service failures using journalctl
-How to connect multiple services using environment variables
-Basic production-style manual deployment
+Updated configuration to connect backend services
 
-THIS PROJECT HELPED ME UNDERSTAND REAL TIME DEVOPS CONCEPTS LIKESERVICE MANAGEMENT NETWORK DEPENDENCY HANDLING AND APPLICATION TROUBLESHOOTING
+Enabled and started Nginx
+
+Verified application through browser
+
+What I Learned
+
+Service management using systemctl
+
+Inter-service communication using private IP
+
+Dependency handling (DB, Cache, MQ)
+
+Application troubleshooting
+
+Log monitoring and debugging
+
+Real-time microservices architecture understanding
